@@ -1,0 +1,5 @@
+@namespace ("com.lj.mytest.demo.service.api.avro")
+protocol AvroHelloService
+{
+    string ping();
+}

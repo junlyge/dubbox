@@ -1,0 +1,4 @@
+com\alibaba\dubbo\rpc\protocol\hessian\HessianServiceImpl$MyException.class
+com\alibaba\dubbo\rpc\protocol\hessian\HessianProtocolTest.class
+com\alibaba\dubbo\rpc\protocol\hessian\HessianServiceImpl.class
+com\alibaba\dubbo\rpc\protocol\hessian\HessianService.class

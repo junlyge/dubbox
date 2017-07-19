@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Built-By: lenovo
+Build-Jdk: 1.7.0_45
+Specification-Title: Hessian Lite(Alibaba embed version)
+Specification-Version: 3.2.2-SNAPSHOT
+Specification-Vendor: Alibaba
+Implementation-Title: Hessian Lite(Alibaba embed version)
+Implementation-Version: 3.2.2-SNAPSHOT
+Implementation-Vendor-Id: com.alibaba
+Implementation-Vendor: Alibaba
+Created-By: Maven Integration for Eclipse
+

@@ -1,0 +1,7 @@
+com\alibaba\dubbo\rpc\protocol\rmi\RmiProtocolTest.class
+com\alibaba\dubbo\rpc\protocol\rmi\DemoServiceImpl.class
+com\alibaba\dubbo\rpc\protocol\rmi\RmiProtocolTest$NonStdRmiInterface.class
+com\alibaba\dubbo\rpc\protocol\rmi\Type.class
+com\alibaba\dubbo\rpc\protocol\rmi\RemoteServiceImpl.class
+com\alibaba\dubbo\rpc\protocol\rmi\RemoteService.class
+com\alibaba\dubbo\rpc\protocol\rmi\DemoService.class

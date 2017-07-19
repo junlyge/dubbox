@@ -1,0 +1,6 @@
+com\alibaba\remoting\transport\mina\World.class
+com\alibaba\remoting\transport\mina\ClientsTest.class
+com\alibaba\remoting\transport\mina\WorldHandler.class
+com\alibaba\remoting\transport\mina\MinaClientToServerTest.class
+com\alibaba\remoting\transport\mina\ClientToServerTest.class
+com\alibaba\remoting\transport\mina\Hello.class

@@ -1,0 +1,8 @@
+com\alibaba\dubbo\rpc\protocol\injvm\InjvmProtocolTest.class
+com\alibaba\dubbo\rpc\protocol\injvm\ProtocolTest.class
+com\alibaba\dubbo\rpc\protocol\injvm\DemoRequest.class
+com\alibaba\dubbo\rpc\protocol\injvm\ProtocolTest$1.class
+com\alibaba\dubbo\rpc\protocol\injvm\Type.class
+com\alibaba\dubbo\rpc\protocol\injvm\DemoService.class
+com\alibaba\dubbo\rpc\protocol\injvm\IEcho.class
+com\alibaba\dubbo\rpc\protocol\injvm\DemoServiceImpl.class
