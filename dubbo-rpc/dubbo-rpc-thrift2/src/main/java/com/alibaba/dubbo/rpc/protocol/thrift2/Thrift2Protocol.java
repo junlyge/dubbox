@@ -3,8 +3,12 @@ package com.alibaba.dubbo.rpc.protocol.thrift2;
 import com.alibaba.dubbo.common.URL;
 import com.alibaba.dubbo.common.logger.Logger;
 import com.alibaba.dubbo.common.logger.LoggerFactory;
+import com.alibaba.dubbo.common.utils.StringUtils;
 import com.alibaba.dubbo.rpc.RpcException;
 import com.alibaba.dubbo.rpc.protocol.AbstractProxyProtocol;
+
+import mockit.internal.expectations.mocking.LocalFieldTypeRedefinitions;
+
 import org.apache.thrift.TException;
 import org.apache.thrift.TProcessor;
 import org.apache.thrift.protocol.TBinaryProtocol;
@@ -18,6 +22,8 @@ import org.apache.thrift.transport.TSocket;
 import org.apache.thrift.transport.TTransport;
 
 import java.lang.reflect.Constructor;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 为dubbo-rpc添加"原生thrift"支持
@@ -26,6 +32,8 @@ import java.lang.reflect.Constructor;
 public class Thrift2Protocol extends AbstractProxyProtocol {
     public static final int DEFAULT_PORT = 33208;
     private static final Logger logger = LoggerFactory.getLogger(Thrift2Protocol.class);
+    //key:port value:TNonblockingServerSocket add by ljun at 2017.07.24
+    private static final Map<String,TNonblockingServerSocket> serverSocketMap = new HashMap<String,TNonblockingServerSocket>();
 
     public int getDefaultPort() {
         return DEFAULT_PORT;
@@ -68,15 +76,26 @@ public class Thrift2Protocol extends AbstractProxyProtocol {
                 Constructor constructor = clazz.getConstructor(type);
                 try {
                     tprocessor = (TProcessor) constructor.newInstance(impl);
-
+                    ///////////////////////////////add by ljun at 2017.07.24////////////////////
                     //解决并发连接数上限默认只有50的问题
-                    TNonblockingServerSocket.NonblockingAbstractServerSocketArgs args = new TNonblockingServerSocket.NonblockingAbstractServerSocketArgs();
+                    /*TNonblockingServerSocket.NonblockingAbstractServerSocketArgs args = new TNonblockingServerSocket.NonblockingAbstractServerSocketArgs();
                     args.backlog(1000);//1k个连接
                     args.port(url.getPort());
                     args.clientTimeout(10000);//10秒超时
 
-                    transport = new TNonblockingServerSocket(args);
+                    transport = new TNonblockingServerSocket(args);*/
+                    transport = serverSocketMap.get(String.valueOf(url.getPort()));
+                    if(null==transport){
+                    	//解决并发连接数上限默认只有50的问题
+                    	TNonblockingServerSocket.NonblockingAbstractServerSocketArgs args = new TNonblockingServerSocket.NonblockingAbstractServerSocketArgs();
+                        args.backlog(1000);//1k个连接
+                        args.port(url.getPort());
+                        args.clientTimeout(10000);//10秒超时
 
+                        transport = new TNonblockingServerSocket(args);
+                        serverSocketMap.put(String.valueOf(url.getPort()), transport);
+                    }
+                    ///////////////////////////////add by ljun at 2017.07.24////////////////////
                     tArgs = new TThreadedSelectorServer.Args(transport);
                     tArgs.workerThreads(200);
                     tArgs.selectorThreads(4);
