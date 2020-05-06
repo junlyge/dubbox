@@ -88,7 +88,8 @@
         <xmemcached_version>1.3.6</xmemcached_version>
         <cxf_version>3.1.5</cxf_version>
         <thrift_version>0.8.0</thrift_version>
-        <thrift2_version>0.10.0</thrift2_version>
+        <!-- <thrift2_version>0.10.0</thrift2_version> -->
+        <thrift2_version>0.12.0</thrift2_version>
         <avro_version>1.8.0</avro_version>
         <jfreechart_version>1.0.13</jfreechart_version>
         <hessian_version>4.0.7</hessian_version>
@@ -104,12 +105,13 @@
         <guice_version>3.0</guice_version>
         <cglib_version>2.2</cglib_version>
         <webx_version>3.1.6</webx_version>
-        <jackson_version>2.7.1</jackson_version>
+        <!-- <jackson_version>2.7.1</jackson_version> -->
+        <jackson_version>2.7.9.4</jackson_version>
 
         <commons_pool_version>1.6</commons_pool_version>
         <commons-lang_version>2.6</commons-lang_version>
         <!-- <tomcat_embed_version>8.0.11</tomcat_embed_version> -->
-        <tomcat_embed_version>8.5.40</tomcat_embed_version>
+        <tomcat_embed_version>8.5.51</tomcat_embed_version>
         <!-- Log libs -->
         <slf4j_version>1.7.15</slf4j_version>
         <jcl_version>1.1</jcl_version>
