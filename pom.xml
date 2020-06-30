@@ -106,7 +106,7 @@
         <cglib_version>2.2</cglib_version>
         <webx_version>3.1.6</webx_version>
         <!-- <jackson_version>2.7.1</jackson_version> -->
-        <jackson_version>2.7.9.4</jackson_version>
+        <jackson_version>2.11.1</jackson_version>
 
         <commons_pool_version>1.6</commons_pool_version>
         <commons-lang_version>2.6</commons-lang_version>
