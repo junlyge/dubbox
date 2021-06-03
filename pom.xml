@@ -125,7 +125,7 @@
 
         <!--rest-->
         <rs-api_version>2.0.1</rs-api_version>
-        <resteasy-jaxrs_version>3.0.9.Final</resteasy-jaxrs_version>
+        <resteasy-jaxrs_version>4.5.7.Final</resteasy-jaxrs_version>
         <resteasy-client_version>3.0.16.Final</resteasy-client_version>
         <resteasy-netty_version>3.0.14.Final</resteasy-netty_version>
         <resteasy-jdk-http_version>3.0.14.Final</resteasy-jdk-http_version>
