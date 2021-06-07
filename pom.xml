@@ -116,7 +116,7 @@
         <slf4j_version>1.7.15</slf4j_version>
         <jcl_version>1.1</jcl_version>
         <log4j_version>1.2.17</log4j_version>
-        <logback_version>1.1.5</logback_version>
+        <logback_version>1.2.0</logback_version>
         <log4j2_version>2.5</log4j2_version>
         <!-- Test libs -->
         <junit_version>4.10</junit_version>
